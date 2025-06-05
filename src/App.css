@@ -167,6 +167,26 @@ tr:hover {
   border-radius: 5px;
 }
 
+/* Footer Styles */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 18px 0 8px 0;
+  color: #888;
+  font-size: 1.08rem;
+  letter-spacing: 0.02em;
+  background: none;
+}
+.footer span {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+.footer a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out; /* Smooth transition */
+}
+
 /* For better responsiveness */
 @media (max-width: 768px) {
   .container {

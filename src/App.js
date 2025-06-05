@@ -58,6 +58,12 @@ function App() {
           initialLoad={initialLoad}
         />
       ) : null}
+      <footer className="footer">
+        <p>
+          Made with ♥ by{" "}
+          <a href="https:www.facebook.com/RHRaju01">Robiul Hossain Raju</a>{" "}
+        </p>
+      </footer>
     </div>
   );
 }
