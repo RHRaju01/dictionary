@@ -1,0 +1,359 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent children from overflowing */
+}
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+  table-layout: fixed; /* Helps with column width consistency */
+}
+th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 8px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  overflow-wrap: break-word; /* Prevents long words from breaking layout */
+  word-break: break-word;
+}
+td {
+  padding: 10px 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-weight: 500;
+  vertical-align: top; /* Aligns content to the top of the cell */
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.ipa-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 3px;
+}
+.ipa-label {
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #777;
+  margin-right: 5px;
+  white-space: nowrap; /* Prevents "AmE:" or "BrE:" from wrapping */
+}
+.ipa-sound {
+  font-family: "Lucida Sans Unicode", "Arial Unicode MS", "DejaVu Sans",
+    "Gentium", "Charis SIL", sans-serif; /* Better IPA font stack */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+tr:hover {
+  background-color: #e8f4fd;
+}
+.base-form {
+  background-color: #e3f2fd !important;
+  color: #1565c0;
+}
+.present-form {
+  background-color: #e8f5e8 !important;
+  color: #2e7d32;
+}
+.s-form {
+  background-color: #fff3e0 !important;
+  color: #ef6c00;
+}
+.present-participle {
+  background-color: #fce4ec !important;
+  color: #c2185b;
+}
+.past-simple {
+  background-color: #f3e5f5 !important;
+  color: #7b1fa2;
+}
+.past-participle {
+  background-color: #ffebee !important;
+  color: #d32f2f;
+}
+
+/* New Styles for React App */
+.search-bar-container {
+  display: flex;
+  margin-bottom: 30px; /* Increased margin */
+  gap: 10px;
+  align-items: center; /* Vertically align items */
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex-grow: 1;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 15px; /* Increased padding */
+  font-size: 1rem; /* Relative font size */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+}
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25); /* Focus indicator */
+}
+
+.search-button-wrapper {
+  display: flex; /* To allow clear button next to search button if needed */
+  gap: 5px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.search-button,
+.clear-button {
+  width: 85px;
+  padding: 12px 20px; /* Increased padding */
+  font-size: 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out; /* Smooth transition */
+}
+
+.search-button {
+  background-color: #667eea;
+}
+.search-button:hover {
+  background-color: #5a6fcf; /* Darker shade on hover */
+}
+
+.clear-button {
+  background-color: #aaa;
+  padding: 12px 15px;
+}
+.clear-button:hover {
+  background-color: #888;
+}
+
+.no-results {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff9c4; /* Light yellow for more visibility */
+  border: 1px solid #fbc02d;
+  border-radius: 5px;
+}
+
+/* For better responsiveness */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  table,
+  th,
+  td {
+    font-size: 12px; /* Smaller font for smaller screens */
+  }
+  th,
+  td {
+    padding: 8px 5px;
+  }
+  .search-bar-container {
+    flex-direction: column; /* Stack search elements on small screens */
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+  .search-input,
+  .search-button-wrapper {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .search-button-wrapper {
+    justify-content: space-between; /* Space out buttons */
+  }
+  .search-button,
+  .clear-button {
+    flex-grow: 1; /* Allow buttons to grow */
+    text-align: center;
+  }
+}
+
+/* Responsive table: horizontal scroll for small screens */
+@media (max-width: 530px) {
+  .container {
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .search-bar-container {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+  .search-input,
+  .search-button-wrapper {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .search-button-wrapper {
+    justify-content: space-between;
+  }
+  .search-button,
+  .clear-button {
+    flex-grow: 1;
+    text-align: center;
+  }
+  table {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    box-shadow: none;
+    border-radius: 10px;
+    overflow: visible;
+    position: relative;
+  }
+  thead {
+    display: none;
+  }
+  tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+  tr {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+  }
+  tr:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+  }
+  tr:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+  }
+  tr:first-child {
+    margin-top: 0;
+  }
+  tr:last-child {
+    margin-bottom: 0;
+  }
+  td {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 8px 0 8px 14px; /* Add left padding for card content */
+    min-height: 32px;
+    background: none;
+    box-shadow: none;
+    font-size: 1em;
+    position: relative;
+    width: 100%;
+    text-align: left;
+  }
+  td:last-child {
+    border-bottom: none;
+  }
+  /* Add labels before each cell for accessibility */
+  td.base-form::before {
+    content: "Base Form";
+  }
+  td.present-form::before {
+    content: "Present Simple (I/we/you/they)";
+  }
+  td.s-form::before {
+    content: "s/es Form (he/she/it)";
+  }
+  td.present-participle::before {
+    content: "Present Participle";
+  }
+  td.past-simple::before {
+    content: "Past Simple";
+  }
+  td.past-participle::before {
+    content: "Past Participle";
+  }
+  td::before {
+    display: block;
+    font-weight: bold;
+    color: #667eea;
+    font-size: 0.97em;
+    margin-bottom: 2px;
+    margin-right: 0;
+    width: 100%;
+    text-align: left;
+    position: static;
+    padding: 0;
+    white-space: normal;
+  }
+  .ipa-line {
+    font-size: 0.95em;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+/* Optional: make table horizontally scrollable for mid-sized screens */
+@media (max-width: 900px) and (min-width: 531px) {
+  .container {
+    padding: 10px;
+  }
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  th,
+  td {
+    min-width: 120px;
+    font-size: 13px;
+  }
+}
